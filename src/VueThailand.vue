@@ -104,9 +104,9 @@ export default {
       this.$emit("input", text);
     },
     selectItem(item = null) {
-      if (!item) {
-        item = this.suggestions[this.cursor];
-      }
+      // if (!item) {
+      // item = this.suggestions[this.cursor];
+      // }
       if (item[this.type]) {
         this.changeValue(item[this.type]);
       }
@@ -124,8 +124,8 @@ export default {
       this.query();
       this.isFocus = true;
     },
-    onBlur() {
-      console.log(this.suggestions);
+    onBlur(e) {
+      this.$emit("not-select");
       setTimeout(() => {
         this.isFocus = false;
       }, 200);
