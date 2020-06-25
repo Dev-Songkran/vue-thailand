@@ -20,51 +20,53 @@
       <div
         class="suggestion-list-item"
         v-for="(item, index) in suggestions"
-        :class="{ 'cursor': cursor === index }"
+        :class="{ cursor: cursor === index }"
         @click="selectItem(item)"
-      >{{ suggestionText(item) }}</div>
+      >
+        {{ suggestionText(item) }}
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ThaiAddressInput",
+  name: "VueThailand",
   props: {
     type: {
       type: String,
-      required: true
+      required: true,
     },
     minLength: {
       type: Number,
-      default: 2
+      default: 2,
     },
     value: {
-      required: true
+      required: true,
     },
     placeholder: {
-      type: String
+      type: String,
     },
     name: {
-      type: String
+      type: String,
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     inputClass: {
-      type: String
+      type: String,
     },
     required: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       suggestions: [],
       isFocus: false,
-      cursor: 0
+      cursor: 0,
     };
   },
   methods: {
@@ -76,8 +78,8 @@ export default {
       }
       this.suggestions =
         this.type === "search"
-          ? this.$thaiAddressInput.search(this.value)
-          : this.$thaiAddressInput.query({ [this.type]: this.value });
+          ? this.$vueThailand.search(this.value)
+          : this.$vueThailand.query({ [this.type]: this.value });
     },
     suggestionText(item) {
       const isBangkok = item.province && item.province.indexOf("กรุงเทพ") > -1;
@@ -137,32 +139,32 @@ export default {
       if (this.cursor < this.suggestions.length - 1) {
         this.cursor += 1;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style>
-.thai-address-input {
+.vue-thailand {
   position: relative;
 }
-.thai-address-input .suggestion-list {
+.vue-thailand .suggestion-list {
   position: absolute;
   z-index: 1000;
   width: 100%;
 }
-.thai-address-input .suggestion-list-item {
+.vue-thailand .suggestion-list-item {
   border: solid 1px #ddd;
   border-top-style: none;
   background: #fff;
   padding: 10px 5px;
   cursor: pointer;
 }
-.thai-address-input .suggestion-list-item:first-child {
+.vue-thailand .suggestion-list-item:first-child {
   border-top-style: solid;
 }
-.thai-address-input .suggestion-list-item.cursor,
-.thai-address-input .suggestion-list-item:hover {
+.vue-thailand .suggestion-list-item.cursor,
+.vue-thailand .suggestion-list-item:hover {
   background: #eee;
 }
 </style>

@@ -4,7 +4,7 @@ import database from "../utils/db/thailand.json";
 function plugin(Vue, options = {}) {
   Vue.component("VueThailand", VueThailand);
   const data = database;
-  Vue.prototype.$thaiAddressInput = new ThaiAddress(data);
+  Vue.prototype.$vueThailand = new ThaiAddress(data);
 }
 
 // Install by default if using the script tag
@@ -16,4 +16,4 @@ export default plugin;
 
 const version = "__VERSION__";
 // Export all components too
-export { ThaiAddressInput, version };
+export { VueThailand, version };
