@@ -102,6 +102,7 @@ export default {
       return result.join(" » ");
     },
     changeValue(text) {
+      this.activeAddress = false;
       this.$emit("input", text);
     },
     selectItem(item = null) {
