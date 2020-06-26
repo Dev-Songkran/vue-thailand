@@ -1,0 +1,47 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\crono\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js publish
+
+PATH: 
+  C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;f:\winnmp\bin;F:\xampp\php;C:\ProgramData\ComposerSetup\bin;"C:\Program Files\Git\bin;D:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\";C:\Program Files\nodejs;C:\Program Files\nodejs\;C:\Program Files\PuTTY\;C:\Program Files\nodejs;D:\Program Files\Microsoft VS Code\bin;F:\WinNMP\bin;C:\Users\crono\AppData\Roaming\Composer\vendor\bin;"C:\Program Files\Git\bin;C:\Program Files\Git\cmd";D:\Program Files\heroku\bin;C:\Users\crono\AppData\Roaming\npm;;D:\WinNMP\bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  10.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (C:\Users\crono\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:125850:13)
+      at Interface.emit (events.js:198:13)
+      at Interface._ttyWrite (readline.js:801:16)
+      at ReadStream.onkeypress (readline.js:184:10)
+      at ReadStream.emit (events.js:198:13)
+      at emitKeys (internal/readline.js:424:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1075:36)
+      at ReadStream.emit (events.js:198:13)
+      at addChunk (_stream_readable.js:288:12)
+
+npm manifest: 
+  {
+    "name": "vue-thailand",
+    "version": "1.3.0",
+    "description": "input thai address with Vue.js",
+    "main": "src/index.js",
+    "repository": {
+      "url": "https://github.com/Dev-Songkran/vue-thailand",
+      "type": "git"
+    },
+    "author": "w.s0ngkran",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
