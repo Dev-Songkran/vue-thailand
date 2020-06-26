@@ -114,7 +114,9 @@ export default {
       if (!item) {
         item = this.suggestions[this.cursor];
       }
-      this.selectAddress = item;
+      if (item) {
+        this.selectAddress = item;
+      }
       if (item[this.type]) {
         this.changeValue(item[this.type]);
       }
