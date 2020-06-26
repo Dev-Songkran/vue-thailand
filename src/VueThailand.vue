@@ -114,10 +114,10 @@ export default {
       if (!item) {
         item = this.suggestions[this.cursor];
       }
-
       if (item[this.type]) {
         this.changeValue(item[this.type]);
       }
+      console.log("s -> ITEM : " + item);
       this.isFocus = false;
       this.activeAddress = true;
       this.selectAddress = item;
