@@ -114,14 +114,13 @@ export default {
       if (!item) {
         item = this.suggestions[this.cursor];
       }
-      if (item) {
-        this.selectAddress = item;
-      }
+
       if (item[this.type]) {
         this.changeValue(item[this.type]);
       }
       this.isFocus = false;
       this.activeAddress = true;
+      this.selectAddress = item;
       this.$refs.input.blur();
       this.$emit("selected", item);
     },
