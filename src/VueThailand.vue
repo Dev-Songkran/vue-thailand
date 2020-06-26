@@ -103,14 +103,13 @@ export default {
       return result.join(" » ");
     },
     changeValue(text) {
-      // console.log(this.selectedAddress, "changeValue");
+      console.log(this.selectedAddress, typeof this.selectedAddress.district);
       if (typeof this.selectedAddress.district == "undefined") {
         this.activeAddress = false;
       }
       this.$emit("input", text);
     },
     selectItem(item = null) {
-      console.log(this.selectedAddress, item, "selectItem");
       if (!item) {
         item = this.suggestions[this.cursor];
       }
