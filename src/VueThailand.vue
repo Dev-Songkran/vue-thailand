@@ -22,9 +22,7 @@
         v-for="(item, index) in suggestions"
         :class="{ cursor: cursor === index }"
         @click="selectItem(item)"
-      >
-        {{ suggestionText(item) }}
-      </div>
+      >{{ suggestionText(item) }}</div>
     </div>
   </div>
 </template>
@@ -35,39 +33,40 @@ export default {
   props: {
     type: {
       type: String,
-      required: true,
+      required: true
     },
     minLength: {
       type: Number,
-      default: 2,
+      default: 2
     },
     value: {
-      required: true,
+      required: true
     },
     placeholder: {
-      type: String,
+      type: String
     },
     name: {
-      type: String,
+      type: String
     },
     disabled: {
       type: Boolean,
-      default: false,
+      default: false
     },
     inputClass: {
-      type: String,
+      type: String
     },
     required: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   data() {
     return {
+      selectedAddress: [],
       suggestions: [],
       activeAddress: false,
       isFocus: false,
-      cursor: 0,
+      cursor: 0
     };
   },
   methods: {
@@ -102,12 +101,15 @@ export default {
       return result.join(" » ");
     },
     changeValue(text) {
-      this.activeAddress = false;
+      if (this.selectedAddress.length <= 0) {
+        this.activeAddress = false;
+      }
       this.$emit("input", text);
     },
     selectItem(item = null) {
       if (!item) {
         item = this.suggestions[this.cursor];
+        this.selectedAddress = item;
       }
       if (item[this.type]) {
         this.changeValue(item[this.type]);
@@ -142,8 +144,8 @@ export default {
       if (this.cursor < this.suggestions.length - 1) {
         this.cursor += 1;
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
