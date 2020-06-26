@@ -136,7 +136,7 @@ export default {
       this.query();
       this.isFocus = true;
     },
-    onBlur(e) {
+    notSelected() {
       if (
         typeof this.selectAddress.district != null ||
         !!this.selectAddress.district
@@ -149,7 +149,10 @@ export default {
         status: this.activeAddress,
         data: this.selectAddress,
       });
+    },
+    onBlur(e) {
       setTimeout(() => {
+        this.notSelected();
         this.isFocus = false;
       }, 200);
     },
