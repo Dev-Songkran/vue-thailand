@@ -110,7 +110,7 @@ export default {
       this.$emit("input", text);
     },
     selectItem(item = null) {
-      console.log(this.selectedAddress, "changeValue");
+      console.log(this.selectedAddress, "selectItem");
       if (!item) {
         item = this.suggestions[this.cursor];
         this.selectedAddress = item;
