@@ -117,11 +117,13 @@ export default {
       if (item[this.type]) {
         this.changeValue(item[this.type]);
       }
-      console.log("s -> ITEM : " + item);
+      console.log("s -> ITEM : ", item);
       this.isFocus = false;
       this.activeAddress = true;
       this.selectAddress = item;
-      this.$refs.input.blur();
+      if (!!item) {
+        this.$refs.input.blur();
+      }
       this.$emit("selected", item);
     },
     onType(value) {
