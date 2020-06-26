@@ -64,7 +64,6 @@ export default {
   },
   data() {
     return {
-      selectedAddress: [],
       suggestions: [],
       activeAddress: false,
       isFocus: false,
@@ -103,17 +102,13 @@ export default {
       return result.join(" » ");
     },
     changeValue(text) {
-      console.log(this.selectedAddress, typeof this.selectedAddress.district);
-      if (typeof this.selectedAddress.district == "undefined") {
-        this.activeAddress = false;
-      }
+      this.activeAddress = false;
       this.$emit("input", text);
     },
     selectItem(item = null) {
       if (!item) {
         item = this.suggestions[this.cursor];
       }
-      this.selectedAddress = item;
 
       if (item[this.type]) {
         this.changeValue(item[this.type]);
