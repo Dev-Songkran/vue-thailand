@@ -103,8 +103,8 @@ export default {
       return result.join(" » ");
     },
     changeValue(text) {
-      console.log(this.selectedAddress, "changeValue");
-      if (this.selectedAddress.length <= 0) {
+      // console.log(this.selectedAddress, "changeValue");
+      if (typeof this.selectedAddress.district == "undefined") {
         this.activeAddress = false;
       }
       this.$emit("input", text);
