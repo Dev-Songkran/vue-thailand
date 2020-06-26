@@ -1,6 +1,6 @@
 {
   "name": "vue-thailand",
-  "version": "1.1.9",
+  "version": "1.2.1",
   "description": "input thai address with Vue.js",
   "main": "src/index.js",
   "repository": {
