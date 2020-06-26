@@ -65,6 +65,12 @@ export default {
   data() {
     return {
       suggestions: [],
+      selectAddress: {
+        subdistrict: null,
+        district: null,
+        province: null,
+        postalCode: null,
+      },
       activeAddress: false,
       isFocus: false,
       cursor: 0,
@@ -102,7 +108,6 @@ export default {
       return result.join(" » ");
     },
     changeValue(text) {
-      this.activeAddress = false;
       this.$emit("input", text);
     },
     selectItem(item = null) {
@@ -129,6 +134,15 @@ export default {
       this.isFocus = true;
     },
     onBlur(e) {
+      if (
+        typeof this.selectAddress.district != null ||
+        !!this.selectAddress.district
+      ) {
+        this.activeAddress = true;
+      } else {
+        this.activeAddress = false;
+      }
+
       this.$emit("not-select", this.activeAddress);
       setTimeout(() => {
         this.isFocus = false;
