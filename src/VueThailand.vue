@@ -142,8 +142,10 @@ export default {
       } else {
         this.activeAddress = false;
       }
-
-      this.$emit("not-select", this.activeAddress);
+      this.$emit("not-select", {
+        status: this.activeAddress,
+        data: this.selectAddress,
+      });
       setTimeout(() => {
         this.isFocus = false;
       }, 200);
